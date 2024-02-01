@@ -1,12 +1,8 @@
-/**
- * Module dependencies.
- */
-var mongoose = require('mongoose'),
-    _ = require('underscore');
+exports.index = function(req, res){
+  res.render('index');
+};
 
-
-exports.render = function(req, res) {
-    res.render('index', {
-        user: req.user ? JSON.stringify(req.user) : "null"
-    });
+exports.partial = function (req, res) {
+  var name = req.params.name;
+  res.render('partials/partial' + name);
 };
